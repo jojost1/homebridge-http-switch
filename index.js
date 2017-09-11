@@ -25,7 +25,7 @@ HTTPSwitch.prototype = {
         	url: this.status
 	    }, function(error, response, body) {
 		    if (!error && response.statusCode == 200){
-				if(body == "1"){
+				if(body == "RESULT = {"POWER":"ON"} POWER = ON"){
 					this.log("HTTP status 1 received!")
 					callback(null, true);
 				}else{
@@ -44,7 +44,7 @@ HTTPSwitch.prototype = {
         	url: this.toggle
 	    }, function(error, response, body) {
 		    if (!error && response.statusCode == 200){
-				if(body == "1"){
+				if(body == "RESULT = {"POWER":"ON"} POWER = ON"){
 					this.log("HTTP status 1 received!")
 				}else{
 					this.log("HTTP status 0 received!")
